@@ -43,7 +43,7 @@ const App = () => {
             /** 주민번호에 대한 글자수 및 뒷자리 첫글자가 1~4의 범위에 있는지에 대한 검사. "-"는 허용하지 않는다. */
             jumin: /^\\d{6}[1-4]\\d{6}/,
 
-            //출처: https://myeonguni.tistory.com/1555 [명우니닷컴:티스토리]
+            // 출처: https://myeonguni.tistory.com/1555 [명우니닷컴:티스토리]
             // https://rubular.com/ 연숩하기 좋은 곳...
             // https://learn.microsoft.com/ko-kr/previous-versions/visualstudio/visual-studio-2010/ae5bf541(v=vs.100)?redirectedfrom=MSDN
         }
