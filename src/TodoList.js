@@ -1,8 +1,16 @@
 import React from 'react'
 
-const TodoList = () => {
+const TodoList = ({ list }) => {
     return (
-        <div>TodoList</div>
+        <div>
+            <h2>list</h2>
+            <ul>
+                {
+                    list.map((li, idx) => <li key={li.id}>{li.title} {li.content}  <button>DEL</button></li>)
+                }
+            </ul>
+            <hr />
+        </div>
     )
 }
 
