@@ -5,6 +5,8 @@ import Modify from './board/Modify';
 import View from './board/View';
 import Write from './board/Write';
 
+import './reset.css';
+
 const App = () => {
     const [input, setInput] = useState({});
     const [boardList, setBoardList] = useState(

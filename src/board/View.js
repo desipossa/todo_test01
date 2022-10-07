@@ -14,7 +14,8 @@ const View = ({ boardList, setBoardList }) => {
         GO('/modify/' + v.id)
     }
     return (
-        <div>
+        <div className='BoardList'>
+
             <div>{v.name}</div>
             <div>{v.title}</div>
             <div style={{ whiteSpace: "pre-line" }}>{v.content}</div>

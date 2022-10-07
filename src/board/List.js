@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import './board.scss'
 
 const List = ({ boardList, setBoardList }) => {
 
     return (
         <div className='BoardList'>
-            <table>
+            <table className='BoardTable'>
                 <thead>
                     <tr>
-                        <td>no</td>
-                        <td>title</td>
-                        <td>name</td>
-                        <td>date</td>
+                        <td className='no'>no</td>
+                        <td className='tit'>title</td>
+                        <td className='name'>name</td>
+                        <td className='date'>date</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,20 +20,25 @@ const List = ({ boardList, setBoardList }) => {
                         boardList.map((it, idx) => {
                             return (
                                 <tr key={idx}>
-                                    <td>{idx + 1} </td>
-                                    <td>
+                                    <td className='no'>{idx + 1} </td>
+                                    <td className='tit'>
                                         <Link to={'/view/' + it.id}>
                                             {it.title}
                                         </Link>
                                     </td>
-                                    <td>{it.name}  </td>
-                                    <td>{it.date}  </td>
+                                    <td className='name'>{it.name}  </td>
+                                    <td className='date'>{it.date}  </td>
                                 </tr>
                             )
                         })
                     }
                 </tbody>
             </table>
+            <div className="BtnGroup">
+                <Link to='/write'>
+                    <button>write</button>
+                </Link>
+            </div>
         </div>
     )
 }
