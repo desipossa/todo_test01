@@ -2,27 +2,38 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 const List = ({ boardList, setBoardList }) => {
-    // const LocalList = JSON.parse(localStorage.getItem('list'));
+
     return (
-        <ul>
-            {
-                boardList.map((it, idx) => {
-                    return (
-                        <li key={idx}>
-                            <div>{idx + 1} </div>
-                            <div>{it.name} </div>
-                            <div>
-                                <Link to={'/view/' + it.id}>
-                                    {it.title}
-                                </Link>
-                            </div>
-                            <div>{it.content} </div>
-                            <div>{it.date} </div>
-                        </li>
-                    )
-                }).reverse()
-            }
-        </ul>
+        <div className='BoardList'>
+            <table>
+                <thead>
+                    <tr>
+                        <td>no</td>
+                        <td>title</td>
+                        <td>name</td>
+                        <td>date</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        boardList.map((it, idx) => {
+                            return (
+                                <tr key={idx}>
+                                    <td>{idx + 1} </td>
+                                    <td>
+                                        <Link to={'/view/' + it.id}>
+                                            {it.title}
+                                        </Link>
+                                    </td>
+                                    <td>{it.name}  </td>
+                                    <td>{it.date}  </td>
+                                </tr>
+                            )
+                        })
+                    }
+                </tbody>
+            </table>
+        </div>
     )
 }
 
