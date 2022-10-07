@@ -2,9 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 const Write = ({ input, setInput, boardList, setBoardList, id }) => {
-    useEffect(() => {
-        localStorage.setItem('list', JSON.stringify(boardList));
-    }, [boardList])
+
     const GO = useNavigate()
     const inputHandler = (e) => {
         setInput({
@@ -20,6 +18,7 @@ const Write = ({ input, setInput, boardList, setBoardList, id }) => {
             ...boardList,
             input
         ])
+
         id.current++;
         setInput({
             name: "",
