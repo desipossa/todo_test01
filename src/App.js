@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, Route, Routes } from 'react-router-dom';
 import List from './board/List';
+import Login from './board/Login';
 import Modify from './board/Modify';
 import View from './board/View';
 import Write from './board/Write';
@@ -26,7 +27,7 @@ const App = () => {
     const id = useRef(1);
     return (
         <div>
-
+            <Login />
             <header>
                 <nav>
                     <ul>
