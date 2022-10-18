@@ -10,16 +10,17 @@ import './reset.css';
 
 const App = () => {
     const [input, setInput] = useState({});
-    const [boardList, setBoardList] = useState(
-        () => {
-            const list = localStorage.getItem("list");
-            if (list) {
-                return JSON.parse(list);
-            } else {
-                return []
-            }
-        }
-    );
+    const [boardList, setBoardList] = useState(JSON.parse(localStorage.getItem("list")) || []);
+    // const [boardList, setBoardList] = useState(
+    //     () => {
+    //         const list = localStorage.getItem("list");
+    //         if (list) {
+    //             return JSON.parse(list);
+    //         } else {
+    //             return []
+    //         }
+    //     }
+    // );
     useEffect(() => {
         localStorage.setItem('list', JSON.stringify(boardList))
     }, [boardList])

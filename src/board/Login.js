@@ -8,16 +8,8 @@ const Login = () => {
     const [user, setUser] = useState([]);
 
     const [userInput, setUserInput] = useState({});
-    const [loginUser, setLoginUser] = useState(
-        () => {
-            const loginUser = localStorage.getItem("loginUser");
-            if (loginUser) {
-                return JSON.parse(loginUser);
-            } else {
-                return []
-            }
-        }
-    );
+    const [loginUser, setLoginUser] = useState(JSON.parse(localStorage.getItem("loginUser") || []));
+
 
     const useInputHandler = (e) => {
         const { name, value } = e.target;
